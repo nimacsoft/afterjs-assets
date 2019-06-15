@@ -1,6 +1,7 @@
 {
   "name": "afterjs-assets",
-  "version": "1.0.0",
+	"version": "1.0.0",
+	"description": "Load After.js css and javascript files faster",
   "main": "dist/index.js",
   "umd:main": "dist/afterjs-assets.umd.production.js",
   "module": "dist/afterjs-assets.es.production.js",
