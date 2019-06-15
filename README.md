@@ -53,7 +53,7 @@ export default [
     path: "/about",
     exact: true,
     component: asyncComponent({
-					// this must b as same as name property 👇
+					// this must be as same as name property 👇
       loader: () => import(/* webpackChunkName: "AboutUs" */ "./About"), // required
       Placeholder: () => <div>...LOADING...</div>, // this is optional, just returns null by default
     }),
@@ -70,7 +70,7 @@ Note 2: we used [webpackChunkName](https://webpack.js.org/guides/code-splitting/
   name: "AboutUs",
   path: '/about',
   component: asyncComponent({
-          // this must b as same as name property 👇
+          // this must be as same as name property 👇
     loader: () => import(/* webpackChunkName: "AboutUs" */ './About'),
   }),
 },
@@ -78,7 +78,7 @@ Note 2: we used [webpackChunkName](https://webpack.js.org/guides/code-splitting/
   name: "Shop",
   path: '/shop',
   component: asyncComponent({
-        // this must b as same as name property 👇
+        // this must be as same as name property 👇
     loader: () => import(/* webpackChunkName: "Shop" */ './ShopComponent'),
   }),
 },
