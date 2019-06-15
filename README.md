@@ -150,7 +150,7 @@ import { getAssests } from 'afterjs-assets';
 const prefix =
   process.env.NODE_ENV === "production"
     ? "/"
-    : `http://${process.env.HOST!}:${parseInt(process.env.PORT!, 10) + 1}/`
+    : `http://${process.env.HOST}:${parseInt(process.env.PORT, 10) + 1}/`
 
 
 class Document extends React.Component {
