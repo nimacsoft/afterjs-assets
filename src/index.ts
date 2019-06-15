@@ -39,4 +39,4 @@ function getAssests({ req, routes, manifest }: getAssets) {
   return { scripts, styles }
 }
 
-export default { getAssests }
+export { getAssests }
