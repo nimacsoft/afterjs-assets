@@ -23,8 +23,8 @@ then create a `razzle.config.js` file in root of project (next to the `package.j
 // razzle.config.js
 
 module.exports = {
-  plugins: ['manifest'],
-};
+  plugins: ["manifest"],
+}
 ```
 
 this will load [razzle-plugin-manifest](https://github.com/nimacsoft/razzle-plugin-manifest), this plugin will generate `manifest.json` file next to the **server.js** file in build folder. (we will use this file in next steps).
@@ -35,30 +35,30 @@ checkout it's repo for more options and configuration.
 ```javascript
 // ./src/routes.js
 
-import React from 'react';
-import Home from './Home';
-import { asyncComponent } from '@jaredpalmer/after';
+import React from "react"
+import Home from "./Home"
+import { asyncComponent } from "@jaredpalmer/after"
 
 export default [
   // normal route
   {
     name: "HomePage", // pick a random name
-    path: '/',
+    path: "/",
     exact: true,
     component: Home,
   },
   // codesplit route
   {
     name: "AboutUs", // pick a random name
-    path: '/about',
+    path: "/about",
     exact: true,
     component: asyncComponent({
-          // this must b as same as name property 👇
-      loader: () => import(/* webpackChunkName: "AboutUs" */ './About'), // required
+					// this must b as same as name property 👇
+      loader: () => import(/* webpackChunkName: "AboutUs" */ "./About"), // required
       Placeholder: () => <div>...LOADING...</div>, // this is optional, just returns null by default
     }),
   },
-];
+]
 ```
 
 Note 1: `name` must be uniqe and **all routes** must have a name with uniqe `value`.
@@ -91,20 +91,20 @@ Based on After.js [Guide](https://github.com/jaredpalmer/after.js/blob/master/RE
 ```javascript
 // ./src/Document.js
 
-import React from 'react';
-import { AfterRoot, AfterData } from '@jaredpalmer/after';
+import React from "react"
+import { AfterRoot, AfterData } from "@jaredpalmer/after"
 
 class Document extends React.Component {
   static async getInitialProps({ assets, data, renderPage }) {
-    const page = await renderPage();
-    return { assets, data, ...page };
+    const page = await renderPage()
+    return { assets, data, ...page }
   }
 
   render() {
-    const { helmet, assets, data } = this.props;
+    const { helmet, assets, data } = this.props
     // get attributes from React Helmet
-    const htmlAttrs = helmet.htmlAttributes.toComponent();
-    const bodyAttrs = helmet.bodyAttributes.toComponent();
+    const htmlAttrs = helmet.htmlAttributes.toComponent()
+    const bodyAttrs = helmet.bodyAttributes.toComponent()
 
     return (
       <html {...htmlAttrs}>
@@ -130,11 +130,11 @@ class Document extends React.Component {
           />
         </body>
       </html>
-    );
+    )
   }
 }
 
-export default Document;
+export default Document
 ```
 
 Then import `getAssets` from `afterjs-assets` and call it in `static getInitialProps`:
@@ -157,7 +157,7 @@ class Document extends React.Component {
 
   static async getInitialProps({ assets, data, renderPage, req }) {
     const page = await renderPage();
-  
+
     // call getAssests and pass styles and scripts to component
     const { styles, scripts } = getAssests({ req, routes, manifest });
     return { assets, data, styles, scripts, ...page };
@@ -220,7 +220,7 @@ if we call ensureReady on browser (client), it will try to download styles and s
 
 ```javascript
 window.onload = () => {
-  ensureReady(routes).then((data) =>
+  ensureReady(routes).then(data =>
     hydrate(
       <BrowserRouter>
         <After data={data} routes={routes} />
@@ -229,18 +229,17 @@ window.onload = () => {
     )
   )
 }
-
 ```
 
 ## Typescript Support
 
-This Project Written in TypeScript and types available in `index.d.ts` so there is no need to install any `@types/` package. 
+This Project Written in TypeScript and types available in `index.d.ts` so there is no need to install any `@types/` package.
 
 ## Contribution
 
 Feel free to propose changes or open issues.
 
-# 
+#
 
 I'm really thinking about duplicate values in routes (name and webpackChunkName) but couldn't find any suitable solution.
 
@@ -249,21 +248,20 @@ we can use webpackChunkName with dynamic import to name chunks by requested file
 ```javascript
 // routes.js
 
-
 function myAsyncComponentLoader(page) {
   return asyncComponent({
-      loader: () => import(/* webpackChunkName: "[request]" */ `./pages/${page}`),
-    }),
+    loader: () => import(/* webpackChunkName: "[request]" */ `./pages/${page}`),
+  })
 }
 
 const routes = [
   {
     name: "About", // About.js file which located in ./pages/About.js
-    path: '/about',
+    path: "/about",
   },
   {
     name: "Home", // Home.js file which located in ./pages/Home.js
-    path: '/',
+    path: "/",
     exact: true,
   },
 ]
