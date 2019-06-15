@@ -7,7 +7,24 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
+	],
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimacsoft/afterjs-assets.git"
+  },
+  "keywords": [
+		"razzle",
+		"afterjs",
+		"react",
+		"ssr"
   ],
+  "author": "Nima Arefi <nimaarefi@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nimacsoft/afterjs-assets/issues"
+  },
+	"homepage": "https://github.com/nimacsoft/afterjs-assets#readme",
+
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
