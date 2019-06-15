@@ -3,7 +3,7 @@
 ![afterjs-assets-status](https://david-dm.org/nimacsoft/afterjs-assets.svg)
 [![npm version](https://badge.fury.io/js/afterjs-assets.svg)](https://badge.fury.io/js/afterjs-assets)
 
-# The Problem with After.js
+# The Problem with [After.js](https://github.com/jaredpalmer/after.js)
 
 If you ever tried to build an Server Side Renderd App with After.js you well notice that when you code spilit your components, After.js only send the main css and js files then in client side in `ensureReady` method tries to fetch javascript and css files. **it's too slow** (even Google PageSpeed Insights warns about it)
 
@@ -266,11 +266,11 @@ window.onload = () => {
 }
 ```
 
-## Typescript Support
+# Typescript Support
 
 This Project Written in TypeScript and types available in `index.d.ts` so there is no need to install any `@types/` package.
 
-## Contribution
+# Contribution
 
 Feel free to propose changes or open issues.
 
@@ -306,7 +306,16 @@ export default routes.map(route => {
   return { component: myAsyncComponentLoader(componentName), ...route }
 })
 ```
+## Author
 
-#
+* Nima Arefi [@nima_arf](https://twitter.com/nima_arf)
+
+---
+
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+
+
+---
+
+> MIT License
