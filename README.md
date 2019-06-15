@@ -53,7 +53,7 @@ export default [
     path: "/about",
     exact: true,
     component: asyncComponent({
-					// this must be as same as name property 👇
+          // this must be as same as name property 👇
       loader: () => import(/* webpackChunkName: "AboutUs" */ "./About"), // required
       Placeholder: () => <div>...LOADING...</div>, // this is optional, just returns null by default
     }),
