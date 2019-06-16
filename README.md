@@ -146,6 +146,7 @@ Note: `manifest.json` will get generated at build time so don't worry if it's no
 
 import manifest from '../build/manifest.json';
 import { getAssests } from 'afterjs-assets';
+import routes from './routes';
 
 const prefix =
   process.env.NODE_ENV === "production"
