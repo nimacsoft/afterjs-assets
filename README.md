@@ -1,3 +1,7 @@
+# This problem is fixed in After.js v3
+you don't need this librray any more
+readmore: https://github.com/jaredpalmer/after.js/releases/tag/v3.0.0
+
 # After.js Assets
 
 ![afterjs-assets-status](https://david-dm.org/nimacsoft/afterjs-assets.svg)
