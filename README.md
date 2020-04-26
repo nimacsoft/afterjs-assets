@@ -1,6 +1,6 @@
 # This problem is fixed in After.js v3
 you don't need this librray any more
-readmore: https://github.com/jaredpalmer/after.js/releases/tag/v3.0.0
+read more: https://github.com/jaredpalmer/after.js/releases/tag/v3.0.0
 
 # After.js Assets
 
